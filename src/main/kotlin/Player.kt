@@ -23,4 +23,10 @@ class Player(var name: String, var lives: Int = 3, var level: Int = 1, var score
         weapon of choice:${weapon}
     """)
     }
+
+    fun showInventory() {
+        println("$name's Inventory:")
+        for(item in inventory) println(item)
+        println("=============================")
+    }
 }
