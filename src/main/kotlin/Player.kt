@@ -1,7 +1,7 @@
 class Player(var name: String, var lives: Int = 3, var level: Int = 1, var score: Int = 0) {
 
     var weapon: Weapon = Weapon("Fist", 1)
-    var inventory = ArrayList<Loot>()
+    private var inventory = ArrayList<Loot>()
 
     fun show() {
         println("""
@@ -22,6 +22,17 @@ class Player(var name: String, var lives: Int = 3, var level: Int = 1, var score
         score:$score
         weapon of choice:${weapon}
     """)
+    }
+
+    fun getLoot(item: Loot) {inventory.add(item)}
+
+    fun dropLoot(item: Loot): Boolean {
+        return if(inventory.contains(item)) {
+            inventory.remove(item)
+            true
+        } else {
+            false
+        }
     }
 
     fun showInventory() {

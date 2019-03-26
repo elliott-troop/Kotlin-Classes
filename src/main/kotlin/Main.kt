@@ -21,10 +21,18 @@ fun main(args: Array<String>) {
     val rubyRing = Loot("Ruby Ring", LootType.RING, 500.0)
     val emeraldRing = Loot("Emerald Ring", LootType.RING, 250.0)
 
-    player1.inventory.add(redPotion)
-    player1.inventory.add(emeraldRing)
-    player2.inventory.add(chestArmor)
-    player2.inventory.add(rubyRing)
+    player1.getLoot(redPotion)
+    player1.getLoot(emeraldRing)
+    player2.getLoot(chestArmor)
+    player2.getLoot(rubyRing)
+
+    player1.showInventory()
+    player2.showInventory()
+
+    println("\nBoth players are forced to drop an item due to a spell!\n")
+
+    player1.dropLoot(emeraldRing)
+    player2.dropLoot(chestArmor)
 
     player1.showInventory()
     player2.showInventory()
