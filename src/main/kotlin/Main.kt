@@ -1,7 +1,7 @@
 fun main(args: Array<String>) {
-    val elliott = Player("elliott")
-    elliott.show()
+    val player1 = Player("John Doe", 4, 8)
+    player1.show()
 
-    val newPlayer = Player("John Doe", level = 5)
-    newPlayer.show()
+    val player2 = Player("Jane Doe", 2, 5, 1000)
+    player2.show()
 }
